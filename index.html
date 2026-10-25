@@ -10,243 +10,66 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1410 0%, #2d1f15 100%);
+            background: #1a1410;
             color: #f5ead9;
             min-height: 100vh;
-            padding: 16px;
-            padding-bottom: 100px;
+            padding-bottom: 90px;
+            overflow-x: hidden;
         }
         
+        /* Верхняя панель */
         .topbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(45, 34, 24, 0.8);
-            padding: 12px 16px;
-            border-radius: 12px;
-            margin-bottom: 16px;
-            backdrop-filter: blur(10px);
+            background: rgba(45, 34, 24, 0.95);
+            padding: 10px 14px;
+            margin-bottom: 8px;
         }
         
         .brand {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         
         .brand-logo {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             background: linear-gradient(135deg, #c8956d, #8a5a3b);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
         }
         
         .brand-name {
             font-weight: 700;
-            font-size: 16px;
+            font-size: 15px;
         }
         
         .balance {
             background: rgba(200, 149, 109, 0.2);
-            padding: 8px 14px;
+            padding: 6px 12px;
             border-radius: 20px;
             font-weight: 600;
             color: #e8b87a;
+            font-size: 14px;
         }
         
-        /* Вид кофейни от первого лица */
-        .cafe-scene {
-            position: relative;
-            background: linear-gradient(180deg, #3a2d20 0%, #2d1f15 100%);
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 16px;
-            min-height: 500px;
-            overflow: hidden;
-            border: 1px solid rgba(200, 149, 109, 0.2);
-            perspective: 1000px;
-        }
-        
-        /* Задняя стена */
-        .back-wall {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 200px;
-            background: linear-gradient(180deg, #4a3828 0%, #3a2d20 100%);
-            border-bottom: 3px solid #2d1f15;
-        }
-        
-        /* Окна */
-        .window {
-            position: absolute;
-            width: 80px;
-            height: 100px;
-            background: linear-gradient(180deg, #87CEEB 0%, #B0E0E6 100%);
-            border: 4px solid #6b4e3d;
-            border-radius: 8px 8px 0 0;
-            box-shadow: inset 0 0 20px rgba(135, 206, 235, 0.5);
-        }
-        
-        .window.left {
-            left: 30px;
-            top: 30px;
-        }
-        
-        .window.right {
-            right: 30px;
-            top: 30px;
-        }
-        
-        /* Дверь входа */
-        .door {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 20px;
-            width: 70px;
-            height: 120px;
-            background: linear-gradient(180deg, #8b5a3c 0%, #6b4e3d 100%);
-            border: 3px solid #4a3828;
-            border-radius: 8px 8px 0 0;
-        }
-        
-        .door::after {
-            content: '🚪';
-            position: absolute;
-            right: 8px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-        }
-        
-        /* Пол */
-        .floor {
-            position: absolute;
-            bottom: 150px;
-            left: 0;
-            right: 0;
-            height: 200px;
-            background: linear-gradient(180deg, #5a4a3a 0%, #4a3828 100%);
-            transform: perspective(500px) rotateX(60deg);
-            transform-origin: bottom;
-        }
-        
-        /* Столы в зале */
-        .tables-area {
-            position: absolute;
-            top: 180px;
-            left: 0;
-            right: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            align-items: center;
-            padding: 0 20px;
-        }
-        
-        .table-row {
-            display: flex;
-            gap: 60px;
-            justify-content: center;
-        }
-        
-        .table-set {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-        }
-        
-        .table {
-            width: 60px;
-            height: 40px;
-            background: linear-gradient(135deg, #8b5a3c 0%, #6b4e3d 100%);
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        }
-        
-        .chairs {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .chair {
-            font-size: 24px;
-        }
-        
-        /* Растения */
-        .plant {
-            position: absolute;
-            font-size: 40px;
-        }
-        
-        .plant.left {
-            left: 20px;
-            top: 220px;
-        }
-        
-        .plant.right {
-            right: 20px;
-            top: 220px;
-        }
-        
-        /* Стойка бариста (передний план) */
-        .counter {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 150px;
-            background: linear-gradient(180deg, #6b4e3d 0%, #4a3828 100%);
-            border-top: 4px solid #8b5a3c;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding: 20px;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
-        }
-        
-        .counter-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0,0,0,0.2);
-            padding: 12px;
-            border-radius: 12px;
-            min-width: 80px;
-        }
-        
-        .counter-icon {
-            font-size: 40px;
-        }
-        
-        .counter-label {
-            font-size: 12px;
-            color: #e8b87a;
-            font-weight: 600;
-        }
-        
+        /* Статистика */
         .stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-bottom: 16px;
+            gap: 6px;
+            padding: 0 14px;
+            margin-bottom: 8px;
         }
         
         .stat-card {
             background: rgba(45, 34, 24, 0.8);
-            padding: 12px;
+            padding: 10px;
             border-radius: 10px;
             text-align: center;
         }
@@ -258,37 +81,163 @@
         }
         
         .stat-label {
-            font-size: 11px;
+            font-size: 10px;
             color: #b8a58c;
-            margin-top: 4px;
+            margin-top: 2px;
         }
         
+        /* Сцена кофейни */
+        .cafe-scene {
+            position: relative;
+            margin: 0 14px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid rgba(200, 149, 109, 0.3);
+            aspect-ratio: 4 / 3;
+            background: #2d1f15;
+        }
+        
+        .cafe-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Кликабельные зоны поверх картинки */
+        .click-zone {
+            position: absolute;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .click-zone:hover {
+            border-color: rgba(232, 184, 122, 0.8);
+            background: rgba(232, 184, 122, 0.15);
+        }
+        
+        .click-zone:active {
+            transform: scale(0.95);
+        }
+        
+        .click-zone .icon {
+            font-size: 24px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .click-zone:hover .icon {
+            opacity: 1;
+        }
+        
+        /* Позиции зон (примерно по картинке) */
+        .zone-cash {
+            bottom: 18%;
+            left: 12%;
+            width: 14%;
+            height: 18%;
+        }
+        
+        .zone-coffee {
+            bottom: 15%;
+            left: 32%;
+            width: 22%;
+            height: 22%;
+        }
+        
+        .zone-display {
+            bottom: 10%;
+            right: 5%;
+            width: 20%;
+            height: 25%;
+        }
+        
+        .zone-table1 {
+            top: 40%;
+            left: 20%;
+            width: 15%;
+            height: 15%;
+        }
+        
+        .zone-table2 {
+            top: 40%;
+            right: 20%;
+            width: 15%;
+            height: 15%;
+        }
+        
+        .zone-table3 {
+            top: 55%;
+            left: 20%;
+            width: 15%;
+            height: 15%;
+        }
+        
+        .zone-table4 {
+            top: 55%;
+            right: 20%;
+            width: 15%;
+            height: 15%;
+        }
+        
+        .zone-door {
+            top: 5%;
+            left: 45%;
+            width: 10%;
+            height: 15%;
+        }
+        
+        /* Уведомление */
+        .notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: rgba(45, 34, 24, 0.95);
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: 1px solid #e8b87a;
+            color: #e8b87a;
+            font-weight: 600;
+            transition: transform 0.3s;
+            z-index: 100;
+        }
+        
+        .notification.show {
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        /* Нижняя навигация */
         .bottom-nav {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(26, 20, 16, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(26, 20, 16, 0.98);
             display: flex;
             justify-content: space-around;
-            padding: 10px;
-            border-top: 1px solid rgba(200, 149, 109, 0.2);
+            padding: 8px 4px;
+            border-top: 1px solid rgba(200, 149, 109, 0.3);
         }
         
         .nav-btn {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 4px;
-            padding: 8px 12px;
+            gap: 2px;
+            padding: 6px 10px;
             background: none;
             border: none;
             color: #b8a58c;
             cursor: pointer;
             border-radius: 10px;
             transition: all 0.2s;
-            font-size: 11px;
+            font-size: 10px;
         }
         
         .nav-btn.active {
@@ -297,11 +246,12 @@
         }
         
         .nav-icon {
-            font-size: 22px;
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
+    <!-- Верхняя панель -->
     <div class="topbar">
         <div class="brand">
             <div class="brand-logo">☕</div>
@@ -310,6 +260,7 @@
         <div class="balance" id="balance">💰 100 000</div>
     </div>
     
+    <!-- Статистика -->
     <div class="stats">
         <div class="stat-card">
             <div class="stat-value" id="level">1</div>
@@ -325,75 +276,41 @@
         </div>
     </div>
     
-    <!-- Вид кофейни от первого лица -->
+    <!-- Сцена кофейни -->
     <div class="cafe-scene">
-        <!-- Задняя стена -->
-        <div class="back-wall">
-            <div class="window left"></div>
-            <div class="door"></div>
-            <div class="window right"></div>
+        <img src="/static/images/cafe.png" alt="Кофейня" class="cafe-bg">
+        
+        <!-- Кликабельные зоны -->
+        <div class="click-zone zone-cash" data-action="cash">
+            <span class="icon">💰</span>
         </div>
-        
-        <!-- Пол -->
-        <div class="floor"></div>
-        
-        <!-- Растения -->
-        <div class="plant left">🪴</div>
-        <div class="plant right">🪴</div>
-        
-        <!-- Столы в зале -->
-        <div class="tables-area">
-            <div class="table-row">
-                <div class="table-set">
-                    <div class="chairs">
-                        <span class="chair">🪑</span>
-                        <span class="chair">🪑</span>
-                    </div>
-                    <div class="table">🟤</div>
-                </div>
-                <div class="table-set">
-                    <div class="chairs">
-                        <span class="chair">🪑</span>
-                        <span class="chair">🪑</span>
-                    </div>
-                    <div class="table">🟤</div>
-                </div>
-            </div>
-            <div class="table-row">
-                <div class="table-set">
-                    <div class="chairs">
-                        <span class="chair">🪑</span>
-                        <span class="chair">🪑</span>
-                    </div>
-                    <div class="table">🟤</div>
-                </div>
-                <div class="table-set">
-                    <div class="chairs">
-                        <span class="chair">🪑</span>
-                        <span class="chair">🪑</span>
-                    </div>
-                    <div class="table">🟤</div>
-                </div>
-            </div>
+        <div class="click-zone zone-coffee" data-action="coffee">
+            <span class="icon"></span>
         </div>
-        
-        <!-- Стойка бариста -->
-        <div class="counter">
-            <div class="counter-item">
-                <div class="counter-icon">💰</div>
-                <div class="counter-label">Касса</div>
-            </div>
-            <div class="counter-item">
-                <div class="counter-icon">☕</div>
-                <div class="counter-label">Кофемашина</div>
-            </div>
-            <div class="counter-item">
-                <div class="counter-icon">🍰</div>
-                <div class="counter-label">Витрина</div>
-            </div>
+        <div class="click-zone zone-display" data-action="display">
+            <span class="icon">🍰</span>
+        </div>
+        <div class="click-zone zone-table1" data-action="table">
+            <span class="icon">🪑</span>
+        </div>
+        <div class="click-zone zone-table2" data-action="table">
+            <span class="icon">🪑</span>
+        </div>
+        <div class="click-zone zone-table3" data-action="table">
+            <span class="icon">🪑</span>
+        </div>
+        <div class="click-zone zone-table4" data-action="table">
+            <span class="icon">🪑</span>
+        </div>
+        <div class="click-zone zone-door" data-action="door">
+            <span class="icon">🚪</span>
         </div>
     </div>
     
+    <!-- Уведомление -->
+    <div class="notification" id="notification"></div>
+    
+    <!-- Нижняя навигация -->
     <div class="bottom-nav">
         <button class="nav-btn active">
             <span class="nav-icon">☕</span>
@@ -425,6 +342,34 @@
         if (tg.initDataUnsafe?.user) {
             const userName = tg.initDataUnsafe.user.first_name;
             document.getElementById('brandName').textContent = `Кафе ${userName}`;
+        }
+        
+        // Обработка кликов по зонам
+        document.querySelectorAll('.click-zone').forEach(zone => {
+            zone.addEventListener('click', () => {
+                const action = zone.dataset.action;
+                showNotification(getActionText(action));
+            });
+        });
+        
+        function getActionText(action) {
+            const texts = {
+                'cash': '💰 Касса — скоро здесь будет меню заказов',
+                'coffee': ' Кофемашина — скоро здесь будет приготовление',
+                'display': '🍰 Витрина — скоро здесь будут десерты',
+                'table': '🪑 Стол — скоро здесь будут клиенты',
+                'door': ' Вход — скоро здесь будут заходить посетители'
+            };
+            return texts[action] || 'Скоро здесь будет что-то интересное!';
+        }
+        
+        function showNotification(text) {
+            const notif = document.getElementById('notification');
+            notif.textContent = text;
+            notif.classList.add('show');
+            setTimeout(() => {
+                notif.classList.remove('show');
+            }, 2500);
         }
     </script>
 </body>
